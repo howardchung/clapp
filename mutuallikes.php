@@ -53,12 +53,6 @@ $userId = $facebook->getUser();
              fjs.parentNode.insertBefore(js, fjs);
            }(document, 'script', 'facebook-jssdk'));
       </script>
-  
-            <div id="other_sec" style="display:none;">
-                <div class="contentwrapper">
-                    <div class="titleblock">
-                        Other
-                    </div>
 
                     <p>
                         Mutual Likes (MuLi): Search for friends with the most common interests.
@@ -99,12 +93,5 @@ $userId = $facebook->getUser();
 
 
                       ?>
-                </div>
-            </div>  
-        </div>
-    </div>
-  <div id="footer">
-    &copy DLnk Industries 2013
-  </div>
 </body>
 </html>
