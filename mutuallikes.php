@@ -1,7 +1,7 @@
 <?php
 
 //uses the PHP SDK.  Download from https://github.com/facebook/facebook-php-sdk
-require 'facebookphp/src/facebook.php';
+//require 'facebookphp/src/facebook.php';
 
 $facebook = new Facebook(array(
   'appId'  => '358797270908365',
@@ -59,6 +59,7 @@ $userId = $facebook->getUser();
                     </p>
 
                       <?php
+                      /*
                       $number=0;
                       while ($number < 10){
                       ?>
@@ -69,9 +70,11 @@ $userId = $facebook->getUser();
                       <?php 
                       $number=$number+1;
                       }
-                      ?>
 
-                      /*
+                      ?>
+                             */
+
+                      
                         $fql = "SELECT page_id, name FROM page WHERE page_id IN (SELECT page_id FROM page_fan WHERE uid=me())";
                        
                               $userResponse = $facebook->api(array(
@@ -88,7 +91,7 @@ $userId = $facebook->getUser();
                       $specificUid=$friendid['uid1'];
                     echo $specificUid;
                     echo "<br>";
-
+/*
                 $fql = "SELECT page_id, name FROM page WHERE page_id IN (SELECT page_id FROM page_fan WHERE uid=$specificUid)";
                               $response = $facebook->api(array(
                                 'method' => 'fql.query',
@@ -105,9 +108,9 @@ $userId = $facebook->getUser();
                           }
                           
                           echo count(array_intersect ($userResponse , $response));
-                          */
+                         */
                       }
-
+ 
                       ?>
 </body>
 </html>
