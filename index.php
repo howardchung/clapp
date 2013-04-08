@@ -48,7 +48,7 @@ $db = new PDO($dsn);
             });
 
 
-            FB.Event.subscribe('auth.authResponseChange', function(response) {
+            FB.Event.subscribe('auth.login', function(response) {
             window.location.reload();
           });
 
