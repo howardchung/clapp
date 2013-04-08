@@ -18,5 +18,5 @@ $sql="INSERT INTO entries (fbid, class) VALUES ('$_POST[fbid]','$subjectAndSecti
 $db->query($sql);
 }
 
-header( "Location: https://blooming-reef-3850.herokuapp.com/#classes" ) ;
+header( "Location: /index.php#classes" ) ;
 ?>

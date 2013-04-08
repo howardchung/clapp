@@ -12,5 +12,5 @@ $sql="DELETE FROM entries WHERE fbid = '$_POST[fbid]' AND class = '$_POST[class]
 
 // Performs the $sql query on the server to insert the values
 $db->query($sql);
-header( "Location: https://blooming-reef-3850.herokuapp.com/#classes" ) ;
+header( "Location: /index.php#classes" ) ;
 ?>
