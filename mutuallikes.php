@@ -57,7 +57,20 @@ $userId = $facebook->getUser();
                     <p>
                         Mutual Likes (MuLi): Search for friends with the most common interests.
                     </p>
+                    
                       <?php
+                      $number=0;
+                      while ($number < 10){
+                      ?>
+
+                        test<?=$number?>
+
+
+                      <?php 
+                      }
+                      ?>
+
+                      /*
                         $fql = "SELECT page_id, name FROM page WHERE page_id IN (SELECT page_id FROM page_fan WHERE uid=me())";
                        
                               $userResponse = $facebook->api(array(
@@ -74,7 +87,7 @@ $userId = $facebook->getUser();
                       $specificUid=$friendid['uid1'];
                     echo $specificUid;
                     echo "<br>";
-/*
+
                 $fql = "SELECT page_id, name FROM page WHERE page_id IN (SELECT page_id FROM page_fan WHERE uid=$specificUid)";
                               $response = $facebook->api(array(
                                 'method' => 'fql.query',
