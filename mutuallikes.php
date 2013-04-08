@@ -57,7 +57,7 @@ $userId = $facebook->getUser();
                     <p>
                         Mutual Likes (MuLi): Search for friends with the most common interests.
                     </p>
-                    
+
                       <?php
                       $number=0;
                       while ($number < 10){
@@ -67,6 +67,7 @@ $userId = $facebook->getUser();
 
 
                       <?php 
+                      $number=$number+1;
                       }
                       ?>
 
