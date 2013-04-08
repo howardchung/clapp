@@ -74,13 +74,13 @@ $userId = $facebook->getUser();
                       $specificUid=$friendid['uid1'];
                     echo $specificUid;
                     echo "<br>";
-
+/*
                 $fql = "SELECT page_id, name FROM page WHERE page_id IN (SELECT page_id FROM page_fan WHERE uid=$specificUid)";
                               $response = $facebook->api(array(
                                 'method' => 'fql.query',
                                 'query' =>$fql,
                               ));
-                              /*
+                              
                                 foreach ($response as &$like) {
                                 $likeId=$like['page_id'];
                                 $likeName=$like['name'];
@@ -89,8 +89,9 @@ $userId = $facebook->getUser();
                                 echo "<br>";  
                              
                           }
-                          */
+                          
                           echo count(array_intersect ($userResponse , $response));
+                          */
                       }
 
                       ?>
