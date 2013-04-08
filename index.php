@@ -92,13 +92,12 @@ $db = new PDO($dsn);
                 <div class="contentwrapper">
                   <?php if ($userId) { 
                   $userInfo = $facebook->api('/' . $userId);
-                  $schoolName = $userInfo['education'][count($userInfo['education'])-1]['school']['name'];
 
                 //create the url
                 $profile_pic =  "http://graph.facebook.com/".$userId."/picture?height=200&width=200";
                   ?>
                   <div class="titleblock">
-                    Hello <span style="font-color:#DFFFA5;"><?= $userInfo['name'] ?></span>, from <?= $schoolName ?>
+                    Hello <span style="font-color:#DFFFA5;"><?= $userInfo['name'] ?></span>
                     <?php echo "<br><br><img class='peeps' src=\"" . $profile_pic . "\"/>"; ?>
                   </div>
                   <div style="text-align:center">
@@ -274,7 +273,7 @@ $db = new PDO($dsn);
                         Mutual Likes (MuLi): Search for friends with the most common interests.
                     </p>
                       <?php
-                                      $fql = "SELECT page_id, name FROM page WHERE page_id IN (SELECT page_id FROM page_fan WHERE uid=me())";
+                              $fql = "SELECT page_id, name FROM page WHERE page_id IN (SELECT page_id FROM page_fan WHERE uid=me())";
                        
                               $response = $facebook->api(array(
                                 'method' => 'fql.query',
@@ -289,7 +288,7 @@ $db = new PDO($dsn);
                                 echo "<p>";
                                 //echo the image out
                                 echo "<img class='peeps' src=\"" . $profile_pic . "\" />";
-                                             echo $likeName;
+                                echo $likeName;
                                 echo "</p>";
                           }
                       ?>
