@@ -1,26 +1,3 @@
-<?php
-
-//uses the PHP SDK.  Download from https://github.com/facebook/facebook-php-sdk
-require 'facebookphp/src/facebook.php';
-
-$facebook = new Facebook(array(
-  'appId'  => '358797270908365',
-  'secret' => '8b5ad4ac3c4a166d0717c91f85c99cd6',
-));
-
-$userId = $facebook->getUser();
-
-$dsn = "pgsql:"
-    . "host=ec2-23-21-161-153.compute-1.amazonaws.com;"
-    . "dbname=dfnau2c20ikt1v;"
-    . "user=qqldptzbgskfay;"
-    . "port=5432;"
-    . "sslmode=require;"
-    . "password=3aCt96iydyR59_GmRL2ltLaXU3";
-$db = new PDO($dsn);
-
-?>
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -41,7 +18,7 @@ $db = new PDO($dsn);
        window.fbAsyncInit = function() {
             FB.init({
               appId      : '358797270908365', // App ID
-              channelUrl : '//blooming-reef-3850.herokuapp.com/channel.html', // Channel File
+              channelUrl : '/channel.html', // Channel File
               status     : true, // check login status
               cookie     : true, // enable cookies to allow the server to access the session
               xfbml      : true  // parse XFBML
@@ -90,7 +67,28 @@ $db = new PDO($dsn);
         <div id="main">
             <div id="home_sec" style="display:none;">
                 <div class="contentwrapper">
-                  <?php if ($userId) { 
+                  <?php 
+
+//uses the PHP SDK.  Download from https://github.com/facebook/facebook-php-sdk
+require 'facebookphp/src/facebook.php';
+
+$facebook = new Facebook(array(
+  'appId'  => '358797270908365',
+  'secret' => '8b5ad4ac3c4a166d0717c91f85c99cd6',
+));
+
+$userId = $facebook->getUser();
+
+$dsn = "pgsql:"
+    . "host=ec2-23-21-161-153.compute-1.amazonaws.com;"
+    . "dbname=dfnau2c20ikt1v;"
+    . "user=qqldptzbgskfay;"
+    . "port=5432;"
+    . "sslmode=require;"
+    . "password=3aCt96iydyR59_GmRL2ltLaXU3";
+$db = new PDO($dsn);
+
+                  if ($userId) { 
                   $userInfo = $facebook->api('/' . $userId);
 
                 //create the url
