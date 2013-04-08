@@ -1,7 +1,7 @@
 <?php
 
 //uses the PHP SDK.  Download from https://github.com/facebook/facebook-php-sdk
-//require 'facebookphp/src/facebook.php';
+require 'facebookphp/src/facebook.php';
 
 $facebook = new Facebook(array(
   'appId'  => '358797270908365',
