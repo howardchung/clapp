@@ -87,8 +87,9 @@ $userId = $facebook->getUser();
                       
                                 echo $likeName;
                                 echo "<br>";  
-                                */ 
+                             
                           }
+                          */
                           echo count(array_intersect ($userResponse , $response));
                       }
 
