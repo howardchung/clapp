@@ -80,17 +80,17 @@ $userId = $facebook->getUser();
                                 'method' => 'fql.query',
                                 'query' =>$fql,
                               ));
+                              /*
                                 foreach ($response as &$like) {
                                 $likeId=$like['page_id'];
                                 $likeName=$like['name'];
                       
                                 echo $likeName;
-                                echo "<br>";   
+                                echo "<br>";  
+                                */ 
                           }
                           echo count(array_intersect ($userResponse , $response));
                       }
-
-
 
                       ?>
 </body>
