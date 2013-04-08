@@ -47,11 +47,6 @@ $db = new PDO($dsn);
               xfbml      : true  // parse XFBML
             });
 
-
-            FB.Event.subscribe('auth.login', function(response) {
-            window.location.reload();
-          });
-
           };
 
           // Load the SDK Asynchronously

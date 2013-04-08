@@ -279,12 +279,6 @@ $db = new PDO($dsn);
                                 'method' => 'fql.query',
                                 'query' =>$fql,
                               ));
-                                foreach ($userResponse as &$like) {
-                                $likeId=$like['page_id'];
-                                $likeName=$like['name'];
-                                echo $likeName;
-                                echo "<br>";
-                          }
 
                       $fql = "SELECT uid1 from friend where uid2=me()";
                        $friendids = $facebook->api(array(
@@ -295,7 +289,7 @@ $db = new PDO($dsn);
                       $specificUid=$friendid['uid1'];
                     echo $specificUid;
                     echo "<br>";
-/*
+
                 $fql = "SELECT page_id, name FROM page WHERE page_id IN (SELECT page_id FROM page_fan WHERE uid=$specificUid)";
                               $response = $facebook->api(array(
                                 'method' => 'fql.query',
@@ -309,7 +303,6 @@ $db = new PDO($dsn);
                                 echo "<br>";   
                           }
                           echo count(array_intersect ($userResponse , $response));
-                           */
                       }
 
 
