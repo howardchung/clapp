@@ -26,12 +26,8 @@
 
 
              FB.Event.subscribe('auth.login',function(response){
-       var isLoggedIn = decodeResponse(response);
-       if(isLoggedIn )
                     window.location.reload()
-       else
-                    showErrorMessage(response);
- });
+              });
 
           };
 
